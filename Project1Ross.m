@@ -14,12 +14,12 @@ checkx = 0;
 
 for t1 = 0:(pi/2):(3*pi/2)
     for l1 = 0:step:l %dl1
+        xp = xp+(step*cos(t1)); %Loop 1 x position(cm)
+        yp = yp+(step*sin(t1)); %Loop 1 y position (cm)
         for t2 = 0:(pi/2):(3*pi/2)
             for l2 = 0:step:l %dl2
                 x = x+(step*cos(t2)); %Loop 2 x position(cm)
                 y = y+(step*sin(t2)); %Loop 2 y positon(cm)
-                xp = xp+(step*cos(t1)); %Loop 1 x position(cm)
-                yp = yp+(step*sin(t1)); %Loop 1 y position (cm)
                 dM = ((step^2)*cos(t1-t2))/((x-xp)^2+(y-yp)^2)^(1/2); %Infintesimal inductance(1/cm)
                 M = M+(mu0/(4*pi))*dM; %Inductance(H)
                 checkx = checkx+xp;
