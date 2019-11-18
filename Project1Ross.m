@@ -10,7 +10,6 @@ xp = 0;
 yp = 0;
 dM = 0;%Initialize infintesimal inductance
 M = 0;%Initialize inductance
-checkx = 0;
 
 for t1 = 0:(pi/2):(3*pi/2)
     for l1 = 0:step:l %dl1
@@ -22,7 +21,6 @@ for t1 = 0:(pi/2):(3*pi/2)
                 y = y+(step*sin(t2)); %Loop 2 y positon(cm)
                 dM = ((step^2)*cos(t1-t2))/((x-xp)^2+(y-yp)^2)^(1/2); %Infintesimal inductance(1/cm)
                 M = M+(mu0/(4*pi))*dM; %Inductance(H)
-                checkx = checkx+xp;
             end
         end
     end
